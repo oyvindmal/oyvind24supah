@@ -4,6 +4,6 @@
 </script>
 <ul>
     {#each data.locations as location}
-        <li>{location.name}</li>
+        <li><a href="/photos/{location.id}">{location.name}</a></li>
     {/each}
 </ul>

@@ -13,3 +13,11 @@ body {
 a {
     color: #fff;
 }
+
+#images {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .image img {
+        max-width:100%;
+    }
+}
