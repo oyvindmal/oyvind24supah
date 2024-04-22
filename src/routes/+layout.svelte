@@ -1,11 +1,15 @@
 
 <script lang="ts">
 	import '../app.css'
-	import { invalidate } from '$app/navigation'
+	import { goto, invalidate } from '$app/navigation'
 	import { onMount } from 'svelte'
 
 	export let data
-
+  let signout = async () => {
+    console.log("loggingout");
+const { error } = await supabase.auth.signOut()
+    goto('/')
+  }
 	let { supabase, session } = data
 	$: ({ supabase, session } = data)
 
@@ -21,4 +25,5 @@
 </script>
 
 <header><h1><a href="/">Min test app</a></h1></header>
+<button on:click="{signout}">Logg av</button>
 <slot />
